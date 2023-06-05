@@ -38,13 +38,15 @@ Route::get('/petikemas/{id}' ,[PetikemasController::class, "delete"])->name('del
 Route::get('/eksport' ,[EksportController::class, "index"])->name('eksport');
 Route::post('/eksport' ,[EksportController::class, "store"])->name('store.eksport');
 Route::put('/eksport/{id}' ,[EksportController::class, "update"])->name('update.eksportt');
-Route::get('/eksport/{id}' ,[EksportController::class, "delete"])->name('delete.eksportt');
+Route::get('/eksport/delete/{id}' ,[EksportController::class, "delete"])->name('delete.eksportt');
+Route::get('/eksport/print' ,[EksportController::class, "print"])->name('print.eksport');
 
 //import
 Route::get('/import' ,[ImportController::class, "index"])->name('import');
 Route::post('/import' ,[ImportController::class, "store"])->name('store.import');
 Route::put('/import/{id}' ,[ImportController::class, "update"])->name('update.import');
-Route::get('/import/{id}' ,[ImportController::class, "delete"])->name('delete.import');
+Route::get('/import/delete/{id}' ,[ImportController::class, "delete"])->name('delete.import');
+Route::get('/import/print' ,[ImportController::class, "print"])->name('print.import');
 
 //pergudangan
 Route::get('/warehouseing' ,[WarehouseingController::class, "index"])->name('warehouseing');
@@ -81,7 +83,7 @@ Route::get('/' ,[LoginController::class, "index"])->name('sign-in');
 
 //profile
 Route::get('/profile' ,[ProfileController::class, "index"])->name('profile');
-Route::post('/profile' ,[ProfileController::class, "store"])->name('store.profile');
+Route::post('/profile/add' ,[ProfileController::class, "store"])->name('store.profile');
 Route::get('/profile/{id}' ,[ProfileController::class, "delete"])->name('delete.profile');
 
 //role

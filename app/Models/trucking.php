@@ -16,4 +16,7 @@ class trucking extends Model
         'keberangkatan',
         'gudang_id',
     ];
+    public function gudang(){
+        return $this->belongsTo(Pergudangan::class,'gudang_id');
+    }
 }

@@ -16,4 +16,13 @@ class Petikemas extends Model
         'berat_muatan',
         'user_id'
     ];
+    public function import(){
+        return $this->hasMany(impor::class,'id');
+    }
+    public function eksport(){
+        return $this->hasMany(ekspor::class,'id');
+    }
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
 }

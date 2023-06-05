@@ -25,7 +25,7 @@
                     <td>{{ $value->name}}</td>
                     <td>{{ $value->email}}</td>
                     <td>{{ $value->company}}</td>
-                    <td>{{ $value->role_id}}</td>
+                    <td>{{ $value->role->role}}</td>
                     <td>
                         <a type="button" class="btn btn-danger" href="{{ route('delete.profile',['id'=>$value->id]) }}">Delete</a>
                     </td>

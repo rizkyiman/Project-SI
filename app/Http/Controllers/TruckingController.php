@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\impor;
+use App\Models\Pergudangan;
 use App\Models\trucking;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
@@ -12,10 +13,10 @@ class TruckingController extends Controller
 {
     function index(){
         $trucking = trucking :: all();
-        $impor = impor :: all();
+        $pergudangan = Pergudangan :: all();
         $array = [
             'trucking' => $trucking,
-            'impor' => $impor,
+            'pergudangan' => $pergudangan,
         ];
         return view('trucking',$array);
     }

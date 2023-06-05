@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ekspor;
 use App\Models\kapal;
+use App\Models\Pergudangan;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -12,10 +13,10 @@ class ShippingController extends Controller
 {
     function index(){
         $shipping = kapal :: all();
-        $ekspor = ekspor :: all();
+        $pergudangan = Pergudangan :: all();
         $array = [
             'shipping' => $shipping,
-            'ekspor' => $ekspor,
+            'pergudangan' => $pergudangan,
         ];
         return view('shipping',$array);
     }
@@ -24,7 +25,7 @@ class ShippingController extends Controller
         $shipping = kapal::create([
             'nama_kapal' => $request->nama_kapal,
             'tujuan' => $request->tujuan,
-            'gudang_id' => $request->role,
+            'gudang_id' => $request->gudang_id,
         ]);
         $shipping->save();
         return redirect()->route('shipping');

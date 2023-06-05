@@ -32,6 +32,6 @@ class ProfileController extends Controller
     public function delete($id)
     {
         User::find($id)->delete();
-        return redirect()->route('eksport');
+        return redirect()->route('profile');
     }
 }

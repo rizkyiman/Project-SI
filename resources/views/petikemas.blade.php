@@ -15,7 +15,7 @@
                     <th scope="col">Golongan</th>
                     <th scope="col">Warna</th>
                     <th scope="col">Berat Muatan</th>
-                    <th scope="col">Id Perusahaan</th>
+                    <th scope="col">Perusahaan</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -27,7 +27,7 @@
                     <td>{{ $value->golongan}}</td>
                     <td>{{ $value->warna}}</td>
                     <td>{{ $value->berat_muatan}}</td>
-                    <td>{{ $value->user_id}}</td>
+                    <td>{{ $value->user->company}}</td>
                     <td>
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$value->id}}">Edit</button>
                       <a type="button" class="btn btn-danger" href="{{ route('delete.petikemas',['id'=>$value->id]) }}">Delete</a>

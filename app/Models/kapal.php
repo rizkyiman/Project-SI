@@ -14,4 +14,7 @@ class kapal extends Model
         'tujuan',
         'gudang_id'
     ];
+    public function gudang(){
+        return $this->belongsTo(Pergudangan::class,'gudang_id');
+    }
 }

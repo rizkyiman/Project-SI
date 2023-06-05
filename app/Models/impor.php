@@ -12,4 +12,7 @@ class impor extends Model
         'id',
         'id_petikemas'
     ];
+    public function petikemas(){
+        return $this->belongsTo(Petikemas::class,'id_petikemas');
+    }
 }

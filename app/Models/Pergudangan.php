@@ -16,4 +16,10 @@ class Pergudangan extends Model
         'id_ekspor',
         'id_impor',
     ];
+    public function kapal(){
+        return $this->hasMany(kapal::class,'id');
+    }
+    public function trucking(){
+        return $this->hasMany(trucking::class,'id');
+    }
 }

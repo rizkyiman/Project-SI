@@ -5,6 +5,7 @@
     <h1 class="h3 mb-3"><strong>Eksport</strong> Dashboard</h1>
     <div class="col-sm-4">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</button>
+        <a type="button" class="btn btn-danger" href="{{ route('print.eksport') }}" target="_blank">Print</a>
     </div>
     <div class="card mt-4">
         <table class="table">
@@ -12,6 +13,9 @@
                 <tr>
                     <th scope="col">ID Eksport</th>
                     <th scope="col">ID Petikemas</th>
+                    <th scope="col">Warna</th>
+                    <th scope="col">Golongan</th>
+                    <th scope="col">Muatan</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -20,6 +24,9 @@
                 <tr>
                     <th scope="row">{{ $value->id}}</th>
                     <td>{{ $value->id_petikemas}}</td>
+                    <td>{{ $value->petikemas->warna}}</td>
+                    <td>{{ $value->petikemas->golongan}}</td>
+                    <td>{{ $value->petikemas->muatan}}</td>
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$value->id}}">Edit</button>
                         <a type="button" class="btn btn-danger" href="{{ route('delete.eksportt',['id'=>$value->id]) }}">Delete</a>
